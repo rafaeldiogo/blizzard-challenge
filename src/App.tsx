@@ -1,7 +1,9 @@
+import Layout from "./components/Layout";
+
 function App() {
   return (
     <>
-      <h1>React + Vite</h1>
+      <Layout />
     </>
   );
 }
