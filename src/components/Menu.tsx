@@ -17,7 +17,10 @@ import logoStarCraftIIWCS from "../assets/images-sports/starcraftiiWCS-logo.png"
 import logoOverwatchWorldCup from "../assets/images-sports/overwatchWorldCup-logo.png";
 import logoOverwatchLeague from "../assets/images-sports/overwatchLeague-logo.png";
 
+import { FaRegUser } from "react-icons/fa";
+
 import Dropdown from "./Dropdown";
+import Button from "./Button";
 
 const Menu = () => {
   return (
@@ -307,8 +310,11 @@ const Menu = () => {
           </ul>
         </div>
         <div className="flex gap-2 items-center text-white">
-          <button>Criar conta</button>
-          <button>Logar</button>
+          <Button text="Criar conta" />
+          <Button variant="secondary">
+            <FaRegUser />
+            <p>Logar</p>
+          </Button>
         </div>
       </div>
     </header>
