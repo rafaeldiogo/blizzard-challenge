@@ -7,9 +7,17 @@ import icon3 from "../assets/footer/icon-3.svg";
 import icon4 from "../assets/footer/icon-4.svg";
 
 import Button from "./Button";
-import { FaApple } from "react-icons/fa";
+import { FaApple, FaLinux, FaUbuntu, FaWindows } from "react-icons/fa";
+import { useOS } from "../hooks/useOsDetect";
 
 const Footer = () => {
+  const os = useOS();
+
+  const isWindows = os.includes("Windows");
+  const isMacOS = os.includes("macOS");
+  const isLinux = os.includes("Linux");
+  const isUbuntu = os.includes("Ubuntu");
+
   return (
     <footer className="flex justify-center h-[865px] bg-cover bg-[url('./assets/footer/footer-bg.png')]">
       <div className="flex justify-center w-full gap-[17px]">
@@ -41,13 +49,42 @@ const Footer = () => {
                 Compre jogos
               </li>
             </ul>
-            <Button
-              variant="secondary"
-              className="py-[14px] p-8 w-[266px] gap-2"
-            >
-              <FaApple size={24} />
-              <p>Baixar para o MacOS</p>
-            </Button>
+            {isWindows && (
+              <Button
+                variant="secondary"
+                className="py-[14px] p-8 w-[266px] gap-2"
+              >
+                <FaWindows size={24} />
+                <p>Baixar para o Windows</p>
+              </Button>
+            )}
+            {isMacOS && (
+              <Button
+                variant="secondary"
+                className="py-[14px] p-8 w-[266px] gap-2"
+              >
+                <FaApple size={24} />
+                <p>Baixar para o MacOS</p>
+              </Button>
+            )}
+            {isLinux && (
+              <Button
+                variant="secondary"
+                className="py-[14px] p-8 w-[266px] gap-2"
+              >
+                <FaLinux size={24} />
+                <p>Baixar para o Linux</p>
+              </Button>
+            )}
+            {isUbuntu && (
+              <Button
+                variant="secondary"
+                className="py-[14px] p-8 w-[266px] gap-2"
+              >
+                <FaUbuntu size={24} />
+                <p>Baixar para o Ubuntu</p>
+              </Button>
+            )}
             <div className="flex w-[239px] gap-[18.67px] items-center mt-[17px]">
               <img src={icon4} alt="icon4" className="w-[13.33px] h-5" />
               <p className="flex flex-col font-semibold text-sm leading-[21px]">
