@@ -311,8 +311,8 @@ const Menu = () => {
         </div>
         <div className="flex gap-4 items-center text-white">
           <Button text="Criar conta" />
-          <Button variant="secondary">
-            <FaRegUser />
+          <Button variant="secondary" className="py-[10px] px-[26.23px] gap-[6.31px]">
+            <FaRegUser size={18.92} />
             <p>Logar</p>
           </Button>
         </div>

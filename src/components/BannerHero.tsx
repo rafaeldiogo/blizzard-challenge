@@ -3,6 +3,7 @@ import iconHearthstone from "../assets/bannerhero/icons/hearthstone.png";
 import iconWow from "../assets/bannerhero/icons/wow.png";
 import iconDiablo from "../assets/bannerhero/icons/diablo.png";
 import iconStarCraft from "../assets/bannerhero/icons/starcraft.png";
+import { FaRegUser } from "react-icons/fa";
 
 import logoDiabloIVLarge from "../assets/bannerhero/images/diabloiv-logo.png";
 import logoHearthstoneLarge from "../assets/bannerhero/images/hearthstone-logo.png";
@@ -71,7 +72,13 @@ const BannerHero = () => {
               <p className="text-lg font-normal leading-[27px] mb-4">
                 O retorno de Lilith traz uma era de escuridão e sofrimento
               </p>
-              <Button variant="secondary" text="Jogue agora" />
+              <Button
+                variant="secondary"
+                className="py-[10px] px-[26.23px] w-[200px] gap-2"
+              >
+                <FaRegUser size={24} />
+                <p>Jogue agora</p>
+              </Button>
             </div>
             <div className="flex h-full flex-col justify-between">
               <img
