@@ -7,6 +7,7 @@ import icon3 from "../assets/footer/icon-3.svg";
 import icon4 from "../assets/footer/icon-4.svg";
 
 import Button from "./Button";
+import { FaApple } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -40,7 +41,13 @@ const Footer = () => {
                 Compre jogos
               </li>
             </ul>
-            <Button text="Baixar" variant="secondary" />
+            <Button
+              variant="secondary"
+              className="py-[14px] p-8 w-[266px] gap-2"
+            >
+              <FaApple size={24} />
+              <p>Baixar para o MacOS</p>
+            </Button>
             <div className="flex w-[239px] gap-[18.67px] items-center mt-[17px]">
               <img src={icon4} alt="icon4" className="w-[13.33px] h-5" />
               <p className="flex flex-col font-semibold text-sm leading-[21px]">
