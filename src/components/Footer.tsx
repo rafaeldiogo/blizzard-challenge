@@ -7,7 +7,7 @@ import icon3 from "../assets/footer/icon-3.svg";
 import icon4 from "../assets/footer/icon-4.svg";
 
 import Button from "./Button";
-import { FaApple, FaLinux, FaWindows } from "react-icons/fa";
+import { FaApple, FaLinux, FaUbuntu, FaWindows } from "react-icons/fa";
 import { useOS } from "../hooks/useOsDetect";
 
 const Footer = () => {
@@ -16,6 +16,7 @@ const Footer = () => {
   const isWindows = os.includes("Windows");
   const isMacOS = os.includes("macOS");
   const isLinux = os.includes("Linux");
+  const isUbuntu = os.includes("Ubuntu");
 
   return (
     <footer className="flex justify-center h-[865px] bg-cover bg-[url('./assets/footer/footer-bg.png')]">
@@ -72,7 +73,16 @@ const Footer = () => {
                 className="py-[14px] p-8 w-[266px] gap-2"
               >
                 <FaLinux size={24} />
-                <p>Baixar para o MacOS</p>
+                <p>Baixar para o Linux</p>
+              </Button>
+            )}
+            {isUbuntu && (
+              <Button
+                variant="secondary"
+                className="py-[14px] p-8 w-[266px] gap-2"
+              >
+                <FaUbuntu size={24} />
+                <p>Baixar para o Ubuntu</p>
               </Button>
             )}
             <div className="flex w-[239px] gap-[18.67px] items-center mt-[17px]">
