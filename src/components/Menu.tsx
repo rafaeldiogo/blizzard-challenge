@@ -309,7 +309,7 @@ const Menu = () => {
             </li>
           </ul>
         </div>
-        <div className="flex gap-2 items-center text-white">
+        <div className="flex gap-4 items-center text-white">
           <Button text="Criar conta" />
           <Button variant="secondary">
             <FaRegUser />
