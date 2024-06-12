@@ -12,8 +12,8 @@ export const useOS = () => {
       setOS("macOS");
     } else if (/Linux/i.test(userAgent)) {
       setOS("Linux");
-    } else {
-      setOS("Unknown");
+    } else if (/Ubuntu/i.test(userAgent)) {
+      setOS("Ubuntu");
     }
   }, []);
 
