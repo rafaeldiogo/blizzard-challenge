@@ -5,22 +5,27 @@ type ButtonProps = {
   text?: string;
   children?: ReactNode;
   variant?: "primary" | "secondary";
+  className?: string;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = ({
   text,
   children,
   variant = "primary",
+  className,
   ...aditionalAttrs
 }: ButtonProps) => {
   const variantTailwindMap = {
-    primary: "w-28 border-[0.79px]",
-    secondary:
-      "flex items-center gap-[6.31px] w-[115.69px] justify-center bg-[#00AEFF]",
+    primary: "border-[0.79px] px-4 py-[10px]",
+    secondary: "bg-[#00AEFF]",
   };
   return (
     <button
-      className={clsx("rounded-[3.15px] h-[41px]", variantTailwindMap[variant])}
+      className={clsx(
+        "flex items-center rounded-[3.15px] justify-center text-sm font-medium",
+        variantTailwindMap[variant],
+        className
+      )}
       {...aditionalAttrs}
     >
       {text ?? children}
