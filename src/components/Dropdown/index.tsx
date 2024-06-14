@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import clsx from "clsx";
+
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 import { mapGames } from "../../utils/mapGames";
@@ -31,12 +33,16 @@ const Dropdown = ({ text }: DropdownProps) => {
         <DropdownMenu.Content
           sideOffset={37}
           hideWhenDetached
-          className="bg-gradient-to-b from-[rgba(2,2,3,1)] to-[rgba(14,17,23,0.92)] w-screen flex items-center justify-center px-28 pt-9"
+          className={clsx(
+            `bg-gradient-to-b from-[rgba(2,2,3,1)] to-[rgba(14,17,23,0.92)] w-screen flex items-center justify-center`,
+            text === "Jogos" && "px-28 pt-[38.53px]",
+            text === "Esportes" && "px-[157px] pt-[55px]"
+          )}
         >
           <nav className="flex flex-col text-white w-[1216px]">
             <ul>
               {text === "Jogos" && (
-                <li className="grid grid-cols-6 gap-x-8 gap-y-7 text-[#9D9D9D] text-sm leading-4">
+                <li className="grid grid-cols-6 gap-x-8 gap-y-7 text-[#9D9D9D] text-sm leading-4 mb-[55px]">
                   {mapGames.map((content) => (
                     <DropdownMenu.Item
                       className="hover:outline-none"
@@ -58,7 +64,7 @@ const Dropdown = ({ text }: DropdownProps) => {
                 </li>
               )}
               {text === "Esportes" && (
-                <li className="grid grid-cols-5 gap-x-16 text-[#9D9D9D] text-sm leading-4">
+                <li className="grid grid-cols-5 gap-x-16 text-[#9D9D9D] text-sm leading-4 mb-[62px]">
                   {mapSports.map((content) => (
                     <DropdownMenu.Item
                       className="hover:outline-none"
