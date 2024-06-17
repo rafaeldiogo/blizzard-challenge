@@ -7,7 +7,7 @@ import Button from "./Button";
 
 const Menu = () => {
   return (
-    <header className="flex justify-center h-24 items-center border-b-[1.5px] border-[#ffffff]">
+    <header className="flex justify-center h-24 items-center border-b-[1.5px] border-[#ffffff] absolute w-full">
       <div className="flex flex-1 justify-between items-center max-w-[1216px]">
         <div className="flex gap-[122px]">
           <a href="/">
