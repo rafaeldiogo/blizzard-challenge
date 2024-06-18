@@ -1,7 +1,8 @@
 import { mapGamesIcon } from "../utils/mapGamesIcon";
 import { mapBannerHeroes } from "../utils/mapBannerHeroes";
 
-import { useEffect, useState } from "react";
+import useSlider from "../hooks/useSlider";
+
 import { FaRegUser } from "react-icons/fa";
 import clsx from "clsx";
 
@@ -9,54 +10,10 @@ import ProgressBar from "./ProgressBar";
 import Button from "./Button";
 
 const BannerHero = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [progress, setProgress] = useState(0);
-  const [autoPlay, setAutoPlay] = useState(true);
-
-  const handleSlideChange = (index: number) => {
-    setActiveSlide(index);
-    setProgress(0);
-    setAutoPlay(false);
-  };
-
-  useEffect(() => {
-    let progressInterval: number | null = null;
-    let interval: number | null = null;
-
-    const startTimer = () => {
-      interval = setInterval(() => {
-        setActiveSlide((prevSlide) => (prevSlide + 1) % mapBannerHeroes.length);
-        setProgress(0);
-      }, 10000);
-
-      setProgress(0);
-      const duration = 10000;
-      const updateInterval = 50;
-      const steps = Math.floor(duration / updateInterval);
-
-      progressInterval = setInterval(() => {
-        setProgress((prevProgress) => {
-          const newProgress = prevProgress + 100 / steps;
-          return newProgress >= 100 ? 0 : newProgress;
-        });
-      }, updateInterval);
-    };
-
-    if (autoPlay) {
-      startTimer();
-    }
-
-    return () => {
-      if (interval) clearInterval(interval);
-      if (progressInterval) clearInterval(progressInterval);
-    };
-  }, [autoPlay]);
-
-  useEffect(() => {
-    if (!autoPlay) {
-      setAutoPlay(true);
-    }
-  }, [activeSlide, autoPlay]);
+  const { activeSlide, progress, handleSlideChange } = useSlider({
+    initialSlide: 0,
+    slides: mapBannerHeroes,
+  });
 
   return (
     <section className="flex-col bg-cover bg-[url('./assets/bannerhero/images/diabloiv-bg.png')] flex items-center justify-between">
