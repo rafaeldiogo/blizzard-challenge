@@ -10,7 +10,19 @@ import gifDiabloIV from "../assets/bannerhero/images/diablo-animation.gif";
 import gifHearthstone from "../assets/bannerhero/images/hearthstone-animation.gif";
 import gifWow from "../assets/bannerhero/images/wow-animation.gif";
 
-export const mapBannerHeroes = [
+export type BannerHeroItem = {
+  title: string;
+  subtitle: string;
+  textButton: string;
+  icon: string;
+  previewGif: string;
+  altPreviewGif: string;
+  gif: string;
+  altGif: string;
+  alt: string;
+};
+
+export const mapBannerHeroes: BannerHeroItem[] = [
   {
     title: "Retorne à escuridão com o game Diablo IV",
     subtitle: "O retorno de Lilith traz uma era de escuridão e sofrimento",
