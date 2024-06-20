@@ -46,7 +46,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-4">
                 <img src={icon3} alt="icon3" className="w-[18px] h-[18px]" />{" "}
-                Compre jogos
+                Compre jogos e itens digitais
               </li>
             </ul>
             {isWindows && (

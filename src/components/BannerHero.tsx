@@ -15,9 +15,20 @@ const BannerHero = () => {
     slides: mapBannerHeroes,
   });
 
+  const changeBackgroundBannerHeroe = [
+    "bg-diabloiv",
+    "bg-hearthstone",
+    "bg-wow",
+  ];
+
   return (
-    <section className="flex-col bg-cover bg-[url('./assets/bannerhero/images/diabloiv-bg.png')] flex items-center justify-between">
-      <div className="flex justify-center items-center h-[736px] w-full">
+    <section
+      className={clsx(
+        `flex-col bg-cover flex items-center justify-between`,
+        changeBackgroundBannerHeroe[activeSlide]
+      )}
+    >
+      <div className="flex justify-center items-center h-[736px] w-full mt-[77px]">
         <div className="max-w-[1216px] w-full flex gap-[174px]">
           <ul className="flex flex-col text-white gap-5 pt-[68px]">
             {mapGamesIcon.map((content, index) => (
