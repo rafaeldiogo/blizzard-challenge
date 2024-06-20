@@ -22,7 +22,7 @@ const Button = ({
   return (
     <button
       className={clsx(
-        "flex items-center rounded-[3.15px] justify-center text-sm font-medium",
+        "flex items-center rounded-[3.15px] justify-center text-sm font-medium leading-[21px]",
         variantTailwindMap[variant],
         className
       )}
