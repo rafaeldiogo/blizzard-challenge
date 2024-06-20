@@ -21,7 +21,7 @@ const Menu = () => {
 
   return (
     <>
-      <header className="flex justify-center h-24 items-center border-b-2 border-white absolute w-full">
+      <header className="flex justify-center h-24 items-center border-b-[1.5px] border-[#6E707C] absolute w-full">
         <div className="flex flex-1 justify-between items-center max-w-[1216px]">
           <div className="flex gap-[112.3px]">
             <a href="/">
@@ -30,6 +30,7 @@ const Menu = () => {
                 alt="blizzard-logo"
                 className="w-[115.7px] h-10"
               />
+              <span className="border-[0.5px] w-[43px] border-[#00AEFF] absolute top-[94.4px]"></span>
             </a>
             <ul className="flex gap-8 items-center text-white font-medium text-sm leading-[21px]">
               <li>
