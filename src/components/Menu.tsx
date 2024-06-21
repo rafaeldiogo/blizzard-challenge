@@ -19,6 +19,8 @@ const Menu = () => {
 
   const { isOpen, toggle } = useModal();
 
+  const hover = `ease-out duration-300 hover:text-[#81848E]`;
+
   return (
     <>
       <header className="flex justify-center h-24 items-center border-b-[1.5px] border-[#6E707C] absolute w-full">
@@ -33,25 +35,28 @@ const Menu = () => {
               <span className="border-[0.5px] w-[43px] border-[#00AEFF] absolute top-[94.4px]"></span>
             </a>
             <ul className="flex gap-8 items-center text-white font-medium text-sm leading-[21px]">
-              <li>
+              <li className={`${hover}`}>
                 <Dropdown text="Jogos" />
               </li>
-              <li>
+              <li className={`${hover}`}>
                 <Dropdown text="Esportes" />
               </li>
-              <li>
+              <li className={`${hover}`}>
                 <a href="/">Loja</a>
               </li>
-              <li>
+              <li className={`${hover}`}>
                 <a href="/">Notícias</a>
               </li>
-              <li>
+              <li className={`${hover}`}>
                 <a href="/">Suporte</a>
               </li>
             </ul>
           </div>
           <div className="flex gap-4 items-center text-white">
-            <Button text="Criar conta" />
+            <Button
+              text="Criar conta"
+              className="hover:text-black hover:bg-white ease-out duration-300"
+            />
             <Button
               onClick={toggle}
               variant="secondary"
