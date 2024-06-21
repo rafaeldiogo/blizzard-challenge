@@ -17,7 +17,7 @@ const Button = ({
 }: ButtonProps) => {
   const variantTailwindMap = {
     primary: "border-[0.79px] px-4 py-[10px]",
-    secondary: "bg-[#00AEFF]",
+    secondary: "bg-[#00AEFF] hover:opacity-75",
   };
   return (
     <button

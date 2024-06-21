@@ -50,12 +50,12 @@ const Dropdown = ({ text }: DropdownProps) => {
                     >
                       <a
                         href="/"
-                        className="flex flex-col items-center justify-center w-44 h-44 gap-2"
+                        className="flex flex-col items-center justify-center w-44 h-44 gap-2 group hover:bg-[#0B0D12] ease-in-out duration-300"
                       >
                         <img
                           src={content.icon}
                           alt={content.alt}
-                          className="h-[69.4px] w-[69.4px]"
+                          className="h-[69.4px] w-[69.4px] group-hover:scale-[1.2] duration-300"
                         />
                         <p className="text-center w-[105px]">{content.text}</p>
                       </a>
@@ -72,12 +72,12 @@ const Dropdown = ({ text }: DropdownProps) => {
                     >
                       <a
                         href="/"
-                        className="flex flex-col items-center w-[174px] h-[237px] gap-2"
+                        className="flex flex-col items-center w-[174px] h-[237px] gap-2 group hover:bg-[#0B0D12] ease-in-out duration-300"
                       >
                         <img
                           src={content.icon}
                           alt={content.alt}
-                          className="h-[149px] w-[174px]"
+                          className="h-[149px] w-[174px] group-hover:scale-[1.2] duration-300"
                         />
                         <p className="text-center w-[105px]">{content.text}</p>
                       </a>
