@@ -12,17 +12,25 @@ import DropdownFooter from "./DropdownFooter";
 
 type DropdownProps = {
   text?: string;
+  isOpen?: (isOpen: boolean) => void;
 };
 
-const Dropdown = ({ text }: DropdownProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Dropdown = ({ text, isOpen }: DropdownProps) => {
+  const [isOpenState, setIsOpenState] = useState(false);
+
+  const setIsOpen = (open: boolean) => {
+    setIsOpenState(open);
+    if (isOpen) {
+      isOpen(open);
+    }
+  };
 
   return (
-    <DropdownMenu.Root modal={isOpen} onOpenChange={setIsOpen}>
+    <DropdownMenu.Root modal={isOpenState} onOpenChange={setIsOpen}>
       <DropdownMenu.Trigger asChild className="outline-none">
         <button className="flex items-center gap-3">
           <span>{text}</span>
-          {isOpen ? (
+          {isOpenState ? (
             <FaChevronUp size={16} className="fill-[#00AEFF]" />
           ) : (
             <FaChevronDown size={16} className="fill-white" />

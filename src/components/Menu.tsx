@@ -6,6 +6,8 @@ import { FaApple, FaFacebookSquare, FaGoogle, FaRegUser } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { useModal } from "../hooks/useModal";
 
+import { useState } from "react";
+
 import Dropdown from "./Dropdown/index";
 import Button from "./Button";
 import Modal from "./Modal";
@@ -21,9 +23,20 @@ const Menu = () => {
 
   const hover = `ease-out duration-300 hover:text-[#81848E]`;
 
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const handleDropdownOpen = (isOpen: boolean) => {
+    setDropdownOpen(isOpen);
+  };
+
   return (
     <>
-      <header className="flex justify-center h-24 items-center border-b-[1.5px] border-[#6E707C] absolute w-full">
+      <header
+        className={`flex justify-center h-24 items-center border-b-[1.5px] ${
+          dropdownOpen &&
+          "bg-gradient-to-b from-[rgba(2,2,3,1)] to-[rgba(14,17,23,0.92)]"
+        } border-[#6E707C] absolute w-full`}
+      >
         <div className="flex flex-1 justify-between items-center max-w-[1216px]">
           <div className="flex gap-[112.3px]">
             <a href="/">
@@ -36,10 +49,10 @@ const Menu = () => {
             </a>
             <ul className="flex gap-8 items-center text-white font-medium text-sm leading-[21px]">
               <li className={`${hover}`}>
-                <Dropdown text="Jogos" />
+                <Dropdown text="Jogos" isOpen={handleDropdownOpen} />
               </li>
               <li className={`${hover}`}>
-                <Dropdown text="Esportes" />
+                <Dropdown text="Esportes" isOpen={handleDropdownOpen} />
               </li>
               <li className={`${hover}`}>
                 <a href="/">Loja</a>
