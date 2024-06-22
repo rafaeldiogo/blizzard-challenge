@@ -14,62 +14,62 @@ import logoArcadeOfBlizzard from "../assets/images-games/arcadeOfBlizzard-logo.p
 export const mapGames = [
   {
     icon: logoDiabloII,
-    text: "Diablo&reg; II ressurected",
+    text: "Diablo\u00AE II ressurected",
     alt: "diabloii-logo",
   },
   {
     icon: logoOverwatchII,
-    text: "Overwatch&reg; 2",
+    text: "Overwatch\u00AE 2",
     alt: "overwatchii-logo",
   },
   {
     icon: logoWow,
-    text: "World of Warcraft&reg;",
+    text: "World of Warcraft\u00AE",
     alt: "wow-logo",
   },
   {
     icon: logoHearthstone,
-    text: "Hearthstone&reg;",
+    text: "Hearthstone\u00AE",
     alt: "hearthstone-logo",
   },
   {
     icon: logoHeroesOfTheStorm,
-    text: "Heroes of the Storm&reg;",
+    text: "Heroes of the Storm\u00AE",
     alt: "heroesOfTheStorm-logo",
   },
   {
     icon: logoWarcraftIII,
-    text: "Warcraft&reg; III Reforged",
+    text: "Warcraft\u00AE III Reforged",
     alt: "warcraftiii-logo",
   },
   {
     icon: logoDiabloIV,
-    text: "Diablo&reg; IV",
+    text: "Diablo\u00AE IV",
     alt: "diabloiv-logo",
   },
   {
     icon: logoDiabloImmortal,
-    text: "Diablo&reg; Immortal",
+    text: "Diablo\u00AE Immortal",
     alt: "diabloImmortal-logo",
   },
   {
     icon: logoDiabloIII,
-    text: "Diablo&reg; III",
+    text: "Diablo\u00AE III",
     alt: "diabloiii-logo",
   },
   {
     icon: logoStarCraftII,
-    text: "StarCraft&reg; II",
+    text: "StarCraft\u00AE II",
     alt: "starcraftii-logo",
   },
   {
     icon: logoStarCraftRemastered,
-    text: "StarCraft&reg; Remastered",
+    text: "StarCraft\u00AE Remastered",
     alt: "starcraftRemastered-logo",
   },
   {
     icon: logoArcadeOfBlizzard,
-    text: "Arcade da Blizzard&reg;",
+    text: "Arcade da Blizzard\u00AE",
     alt: "arcadeOfBlizzard-logo",
   },
 ];

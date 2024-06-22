@@ -7,27 +7,27 @@ import logoOverwatchLeague from "../assets/images-sports/overwatchLeague-logo.pn
 export const mapSports = [
   {
     icon: logoHearthstoneMasters,
-    text: "Hearthstone&reg; masters",
+    text: "Hearthstone\u00AE masters",
     alt: "hearthstoneMasters-logo",
   },
   {
     icon: logoWowArenaWorldChampionship,
-    text: "Campeonato Mundial de Arena WoW&reg;",
+    text: "Campeonato Mundial de Arena WoW\u00AE",
     alt: "wowArenaWorldChampionship-logo",
   },
   {
     icon: logoStarCraftIIWCS,
-    text: "StarCraft&reg; II WCS",
+    text: "StarCraft\u00AE II WCS",
     alt: "starcraftiiWCS-logo",
   },
   {
     icon: logoOverwatchWorldCup,
-    text: "Copa Mundial de Overwatch&reg;",
+    text: "Copa Mundial de Overwatch\u00AE",
     alt: "overwatchWorldCup-logo",
   },
   {
     icon: logoOverwatchLeague,
-    text: "Liga de Overwatch&reg;",
+    text: "Liga de Overwatch\u00AE",
     alt: "overwatchLeague-logo",
   },
 ];
