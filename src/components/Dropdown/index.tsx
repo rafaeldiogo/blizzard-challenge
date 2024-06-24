@@ -1,104 +1,77 @@
-import { useState } from "react";
-
-import clsx from "clsx";
-
+import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-import { mapGames } from "../../utils/mapGames";
-import { mapSports } from "../../utils/mapSports";
-
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import DropdownFooter from "./DropdownFooter";
 
 type DropdownProps = {
   text?: string;
   isOpen?: (isOpen: boolean) => void;
+  children?: ReactNode;
 };
 
-const Dropdown = ({ text, isOpen }: DropdownProps) => {
+const Dropdown = ({ text, isOpen, children }: DropdownProps) => {
   const [isOpenState, setIsOpenState] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const setIsOpen = (open: boolean) => {
-    setIsOpenState(open);
+  const closeDropdown = useCallback(() => {
+    setIsOpenState(false);
     if (isOpen) {
-      isOpen(open);
+      isOpen(false);
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isOpenState &&
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        closeDropdown();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [closeDropdown, isOpenState]);
+
+  const toggleDropdown = () => {
+    setIsOpenState((prevState) => !prevState);
+    if (isOpen) {
+      isOpen(!isOpenState);
     }
   };
 
   return (
-    <DropdownMenu.Root modal={isOpenState} onOpenChange={setIsOpen}>
-      <DropdownMenu.Trigger asChild className="outline-none">
-        <button className="flex items-center gap-3">
-          <span>{text}</span>
-          {isOpenState ? (
-            <FaChevronUp size={16} className="fill-[#00AEFF]" />
-          ) : (
-            <FaChevronDown size={16} className="fill-white" />
-          )}
-        </button>
-      </DropdownMenu.Trigger>
-      <DropdownMenu.Portal>
-        <DropdownMenu.Content
-          sideOffset={37}
-          hideWhenDetached
-          className={clsx(
-            `bg-gradient-to-b from-[rgba(2,2,3,1)] to-[rgba(14,17,23,0.92)] w-screen flex items-center justify-center`,
-            text === "Jogos" && "px-28 pt-[38.53px]",
-            text === "Esportes" && "px-[157px] pt-[55px]"
-          )}
-        >
-          <nav className="flex flex-col text-white w-[1216px]">
-            <ul>
-              {text === "Jogos" && (
-                <li className="grid grid-cols-6 gap-x-8 gap-y-7 text-[#9D9D9D] text-sm leading-4 mb-[55px]">
-                  {mapGames.map((content) => (
-                    <DropdownMenu.Item
-                      className="hover:outline-none"
-                      key={content.text}
-                    >
-                      <a
-                        href="/"
-                        className="flex flex-col items-center justify-center w-44 h-44 gap-2 group hover:bg-[#0B0D12] ease-in-out duration-300"
-                      >
-                        <img
-                          src={content.icon}
-                          alt={content.alt}
-                          className="h-[69.4px] w-[69.4px] group-hover:scale-[1.2] duration-300"
-                        />
-                        <p className="text-center w-[105px]">{content.text}</p>
-                      </a>
-                    </DropdownMenu.Item>
-                  ))}
-                </li>
-              )}
-              {text === "Esportes" && (
-                <li className="grid grid-cols-5 gap-x-16 text-[#9D9D9D] text-sm leading-4 mb-[62px]">
-                  {mapSports.map((content) => (
-                    <DropdownMenu.Item
-                      className="hover:outline-none"
-                      key={content.text}
-                    >
-                      <a
-                        href="/"
-                        className="flex flex-col items-center w-[174px] h-[237px] gap-2 group hover:bg-[#0B0D12] ease-in-out duration-300"
-                      >
-                        <img
-                          src={content.icon}
-                          alt={content.alt}
-                          className="h-[149px] w-[174px] group-hover:scale-[1.2] duration-300"
-                        />
-                        <p className="text-center w-[105px]">{content.text}</p>
-                      </a>
-                    </DropdownMenu.Item>
-                  ))}
-                </li>
-              )}
+    <div ref={dropdownRef}>
+      <button
+        onClick={toggleDropdown}
+        className="flex items-center gap-3 outline-none group"
+      >
+        <span className="group-hover:text-[#81848E] duration-300">{text}</span>
+        {isOpenState ? (
+          <FaChevronUp size={16} className="fill-[#00AEFF]" />
+        ) : (
+          <FaChevronDown
+            size={16}
+            className="fill-white group-hover:fill-[#00AEFF] duration-300"
+          />
+        )}
+      </button>
+      {isOpenState && (
+        <div className="absolute z-10 top-full left-0 w-full">
+          <div className="bg-gradient-to-b from-[rgba(2,2,3,1)] to-[rgba(14,17,23,0.92)]">
+            <nav className="flex flex-col">
+              <ul className="flex items-center justify-center">{children}</ul>
               <DropdownFooter name={text} />
-            </ul>
-          </nav>
-        </DropdownMenu.Content>
-      </DropdownMenu.Portal>
-    </DropdownMenu.Root>
+            </nav>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 

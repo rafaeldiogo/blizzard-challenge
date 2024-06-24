@@ -2,11 +2,13 @@ import logoBlizzard from "../assets/blizzard-logo.png";
 import logoBattleNet from "../assets/footer/logo-battle-net.png";
 
 import { FaApple, FaFacebookSquare, FaGoogle, FaRegUser } from "react-icons/fa";
+import { useState } from "react";
 
 import { useForm } from "react-hook-form";
 import { useModal } from "../hooks/useModal";
 
-import { useState } from "react";
+import { mapGames } from "../utils/mapGames";
+import { mapSports } from "../utils/mapSports";
 
 import Dropdown from "./Dropdown/index";
 import Button from "./Button";
@@ -48,11 +50,45 @@ const Menu = () => {
               <span className="border-[0.5px] w-[43px] border-[#00AEFF] absolute top-[94.4px]"></span>
             </a>
             <ul className="flex gap-8 items-center text-white font-medium text-sm leading-[21px]">
-              <li className={`${hover}`}>
-                <Dropdown text="Jogos" isOpen={handleDropdownOpen} />
+              <li>
+                <Dropdown text="Jogos" isOpen={handleDropdownOpen}>
+                  <li className="grid grid-cols-6 gap-x-8 gap-y-7 text-[#9D9D9D] text-sm leading-4 mb-[55px] pt-[38.53px]">
+                    {mapGames.map((content) => (
+                      <a
+                        key={content.text}
+                        href="/"
+                        className="flex flex-col items-center justify-center w-44 h-44 gap-2 group hover:bg-[#0B0D12] ease-in-out duration-300"
+                      >
+                        <img
+                          src={content.icon}
+                          alt={content.alt}
+                          className="h-[69.4px] w-[69.4px] group-hover:scale-[1.2] duration-300"
+                        />
+                        <p className="text-center w-[105px]">{content.text}</p>
+                      </a>
+                    ))}
+                  </li>
+                </Dropdown>
               </li>
-              <li className={`${hover}`}>
-                <Dropdown text="Esportes" isOpen={handleDropdownOpen} />
+              <li>
+                <Dropdown text="Esportes" isOpen={handleDropdownOpen}>
+                  <li className="grid grid-cols-5 gap-x-16 text-[#9D9D9D] text-sm leading-4 mb-[62px] pt-[55px]">
+                    {mapSports.map((content) => (
+                      <a
+                        key={content.text}
+                        href="/"
+                        className="flex flex-col items-center w-[174px] h-[237px] gap-2 group hover:bg-[#0B0D12] ease-in-out duration-300"
+                      >
+                        <img
+                          src={content.icon}
+                          alt={content.alt}
+                          className="h-[149px] w-[174px] group-hover:scale-[1.2] duration-300"
+                        />
+                        <p className="text-center w-[105px]">{content.text}</p>
+                      </a>
+                    ))}
+                  </li>
+                </Dropdown>
               </li>
               <li className={`${hover}`}>
                 <a href="/">Loja</a>
