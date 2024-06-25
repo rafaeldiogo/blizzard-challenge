@@ -7,6 +7,7 @@ module.exports = {
         diabloiv: "url('./assets/bannerhero/images/diabloiv-bg.png')",
         hearthstone: "url('./assets/bannerhero/images/hearthstone-bg.png')",
         wow: "url('./assets/bannerhero/images/wow-bg.png')",
+        footer: "url('./assets/footer/footer-bg.png')",
       },
     },
   },
