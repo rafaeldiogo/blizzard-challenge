@@ -39,7 +39,7 @@ const Menu = () => {
           "bg-gradient-to-b from-[rgba(2,2,3,1)] to-[rgba(14,17,23,0.92)]"
         } border-[#6E707C] absolute w-full`}
       >
-        <div className="flex flex-1 justify-between items-center max-w-[1216px]">
+        <div className="flex flex-1 justify-between items-center max-w-[1312.69px]">
           <div className="flex gap-[112.3px]">
             <a href="/">
               <img
