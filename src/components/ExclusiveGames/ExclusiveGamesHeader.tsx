@@ -6,7 +6,7 @@ import iconFourSquareBlue from "../../assets/exclusive-games/icons/four-square-b
 
 const ExclusiveGamesHeader = () => {
   return (
-    <div className="flex w-full max-w-[1216px] justify-between items-end pt-[85px]">
+    <div className="flex w-full max-w-[1300px] justify-between items-end pt-[85px]">
       <div className="flex gap-[107px] mr-[183.23px]">
         <p className="uppercase text-[#8F9199] font-semibold text-[15px] leading-[22.5px] pt-[11px]">
           Games

@@ -29,7 +29,7 @@ const BannerHero = () => {
       )}
     >
       <div className="flex justify-center items-center h-[736px] w-full mt-[77px]">
-        <div className="max-w-[1216px] w-full flex gap-[174px]">
+        <div className="max-w-[1312.69px] w-full flex gap-[174px]">
           <ul className="flex flex-col text-white gap-5 pt-[68px]">
             {mapGamesIcon.map((content, index) => (
               <li key={content.icon} className="w-[48px] h-[48px]">
