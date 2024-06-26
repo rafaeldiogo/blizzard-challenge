@@ -11,9 +11,9 @@ const ExclusiveGames = () => {
   const { games } = useFetchGames();
 
   return (
-    <main className="flex flex-col gap-[85px] h-fit items-center justify-center bg-[#020203]">
+    <main className="flex flex-col gap-[85px] h-fit items-center bg-[#020203]">
       <ExclusiveGamesHeader />
-      <div className="h-fit w-full max-w-[1216px]">
+      <div className="h-fit w-full max-w-[1300px]">
         <div className="grid grid-cols-4 gap-x-8 gap-y-12 mb-[107.3px]">
           {games?.map((game) => (
             <CardGame key={game.name} {...game} />
