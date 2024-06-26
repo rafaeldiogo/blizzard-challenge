@@ -1,7 +1,13 @@
 import logoBlizzard from "../assets/blizzard-logo.png";
 import logoBattleNet from "../assets/footer/logo-battle-net.png";
 
-import { FaApple, FaFacebookSquare, FaGoogle, FaRegUser } from "react-icons/fa";
+import {
+  FaApple,
+  FaBars,
+  FaFacebookSquare,
+  FaGoogle,
+  FaRegUser,
+} from "react-icons/fa";
 import { useState } from "react";
 
 import { useForm } from "react-hook-form";
@@ -9,6 +15,8 @@ import { useModal } from "../hooks/useModal";
 
 import { mapGames } from "../utils/mapGames";
 import { mapSports } from "../utils/mapSports";
+
+import { useViewportContext } from "../context/ViewportContext";
 
 import Dropdown from "./Dropdown/index";
 import Button from "./Button";
@@ -22,10 +30,10 @@ const Menu = () => {
   } = useForm();
 
   const { isOpen, toggle } = useModal();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const { isViewportMinMd, isViewportMinLg } = useViewportContext();
 
   const hover = `ease-out duration-300 hover:text-[#81848E]`;
-
-  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const handleDropdownOpen = (isOpen: boolean) => {
     setDropdownOpen(isOpen);
@@ -39,17 +47,17 @@ const Menu = () => {
           "bg-gradient-to-b from-[rgba(2,2,3,1)] to-[rgba(14,17,23,0.92)]"
         } border-[#6E707C] absolute w-full`}
       >
-        <div className="flex flex-1 justify-between items-center max-w-[1312.69px]">
+        <div className="flex flex-1 justify-between items-center max-w-[1312.69px] md:ml-[45px] md:mr-[49px] ml-6 mr-7">
           <div className="flex gap-[112.3px]">
             <a href="/">
               <img
                 src={logoBlizzard}
                 alt="blizzard-logo"
-                className="w-[115.7px] h-10"
+                className="2xl:w-[115.7px] md:w-[86.77px] w-[69.42px] xl:h-10 h-8"
               />
               <span className="border-[0.5px] w-[43px] border-[#00AEFF] absolute top-[94.4px]"></span>
             </a>
-            <ul className="flex gap-8 items-center text-white font-medium text-sm leading-[21px]">
+            <ul className="xl:flex gap-8 items-center text-white font-medium text-sm leading-[21px] xl:visible hidden">
               <li>
                 <Dropdown text="Jogos" isOpen={handleDropdownOpen}>
                   <li className="grid grid-cols-6 gap-x-8 gap-y-7 text-[#9D9D9D] text-sm leading-4 mb-[55px] pt-[38.53px]">
@@ -101,19 +109,26 @@ const Menu = () => {
               </li>
             </ul>
           </div>
-          <div className="flex gap-4 items-center text-white">
-            <Button
-              text="Criar conta"
-              className="hover:text-black hover:bg-white ease-out duration-300"
-            />
-            <Button
-              onClick={toggle}
-              variant="secondary"
-              className="py-[10px] px-[26.23px] gap-[6.31px]"
-            >
-              <FaRegUser size={18.92} />
-              <p>Logar</p>
-            </Button>
+          <div className="flex gap-[89.31px] items-center">
+            {isViewportMinMd && (
+              <div className="flex gap-4 items-center text-white">
+                <Button
+                  text="Criar conta"
+                  className="hover:text-black hover:bg-white ease-out duration-300"
+                />
+                <Button
+                  onClick={toggle}
+                  variant="secondary"
+                  className="py-[10px] px-[26.23px] gap-[6.31px]"
+                >
+                  <FaRegUser size={18.92} />
+                  <p>Logar</p>
+                </Button>
+              </div>
+            )}
+            {!isViewportMinLg && (
+              <FaBars className="fill-white w-7 h-[18.67px]" />
+            )}
           </div>
         </div>
       </header>
