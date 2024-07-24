@@ -9,7 +9,7 @@ import { ViewportProvider } from "./context/ViewportContext.tsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/blizzard-challenge",
     element: <Home />,
   },
 ]);
