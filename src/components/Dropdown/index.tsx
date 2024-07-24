@@ -49,20 +49,20 @@ const Dropdown = ({ text, isOpen, children }: DropdownProps) => {
     <div ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
-        className="flex items-center gap-3 outline-none group"
+        className="group flex items-center gap-3 outline-none"
       >
-        <span className="group-hover:text-[#81848E] duration-300">{text}</span>
+        <span className="duration-300 group-hover:text-[#81848E]">{text}</span>
         {isOpenState ? (
           <FaChevronUp size={16} className="fill-[#00AEFF]" />
         ) : (
           <FaChevronDown
             size={16}
-            className="fill-white group-hover:fill-[#00AEFF] duration-300"
+            className="fill-white duration-300 group-hover:fill-[#00AEFF]"
           />
         )}
       </button>
       {isOpenState && (
-        <div className="absolute z-10 top-full left-0 w-full">
+        <div className="absolute left-0 top-full z-10 w-full">
           <div className="bg-gradient-to-b from-[rgba(2,2,3,1)] to-[rgba(14,17,23,0.92)]">
             <nav className="flex flex-col">
               <ul className="flex items-center justify-center">{children}</ul>

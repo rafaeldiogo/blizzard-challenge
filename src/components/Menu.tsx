@@ -42,37 +42,37 @@ const Menu = () => {
   return (
     <>
       <header
-        className={`flex justify-center h-24 items-center border-b-[1.5px] ${
+        className={`flex h-24 items-center justify-center border-b-[1.5px] ${
           dropdownOpen &&
           "bg-gradient-to-b from-[rgba(2,2,3,1)] to-[rgba(14,17,23,0.92)]"
-        } border-[#6E707C] absolute w-full`}
+        } absolute w-full border-[#6E707C]`}
       >
-        <div className="flex flex-1 justify-between items-center max-w-[1312.69px] md:ml-[45px] md:mr-[49px] ml-6 mr-7">
+        <div className="ml-6 mr-7 flex max-w-[1312.69px] flex-1 items-center justify-between md:ml-[45px] md:mr-[49px]">
           <div className="flex gap-[112.3px]">
             <a href="/">
               <img
                 src={logoBlizzard}
                 alt="blizzard-logo"
-                className="2xl:w-[115.7px] md:w-[86.77px] w-[69.42px] xl:h-10 h-8"
+                className="h-8 w-[69.42px] md:w-[86.77px] xl:h-10 2xl:w-[115.7px]"
               />
-              <span className="border-[0.5px] w-[43px] border-[#00AEFF] absolute top-[94.4px]"></span>
+              <span className="absolute top-[94.4px] w-[43px] border-[0.5px] border-[#00AEFF]"></span>
             </a>
-            <ul className="xl:flex gap-8 items-center text-white font-medium text-sm leading-[21px] xl:visible hidden">
+            <ul className="hidden items-center gap-8 text-sm font-medium leading-[21px] text-white xl:visible xl:flex">
               <li>
                 <Dropdown text="Jogos" isOpen={handleDropdownOpen}>
-                  <li className="grid grid-cols-6 gap-x-8 gap-y-7 text-[#9D9D9D] text-sm leading-4 mb-[55px] pt-[38.53px]">
+                  <li className="mb-[55px] grid grid-cols-6 gap-x-8 gap-y-7 pt-[38.53px] text-sm leading-4 text-[#9D9D9D]">
                     {mapGames.map((content) => (
                       <a
                         key={content.text}
                         href="/"
-                        className="flex flex-col items-center justify-center w-44 h-44 gap-2 group hover:bg-[#0B0D12] ease-in-out duration-300"
+                        className="group flex h-44 w-44 flex-col items-center justify-center gap-2 duration-300 ease-in-out hover:bg-[#0B0D12]"
                       >
                         <img
                           src={content.icon}
                           alt={content.alt}
-                          className="h-[69.4px] w-[69.4px] group-hover:scale-[1.2] duration-300"
+                          className="h-[69.4px] w-[69.4px] duration-300 group-hover:scale-[1.2]"
                         />
-                        <p className="text-center w-[105px]">{content.text}</p>
+                        <p className="w-[105px] text-center">{content.text}</p>
                       </a>
                     ))}
                   </li>
@@ -80,19 +80,19 @@ const Menu = () => {
               </li>
               <li>
                 <Dropdown text="Esportes" isOpen={handleDropdownOpen}>
-                  <li className="grid grid-cols-5 gap-x-16 text-[#9D9D9D] text-sm leading-4 mb-[62px] pt-[55px]">
+                  <li className="mb-[62px] grid grid-cols-5 gap-x-16 pt-[55px] text-sm leading-4 text-[#9D9D9D]">
                     {mapSports.map((content) => (
                       <a
                         key={content.text}
                         href="/"
-                        className="flex flex-col items-center w-[174px] h-[237px] gap-2 group hover:bg-[#0B0D12] ease-in-out duration-300"
+                        className="group flex h-[237px] w-[174px] flex-col items-center gap-2 duration-300 ease-in-out hover:bg-[#0B0D12]"
                       >
                         <img
                           src={content.icon}
                           alt={content.alt}
-                          className="h-[149px] w-[174px] group-hover:scale-[1.2] duration-300"
+                          className="h-[149px] w-[174px] duration-300 group-hover:scale-[1.2]"
                         />
-                        <p className="text-center w-[105px]">{content.text}</p>
+                        <p className="w-[105px] text-center">{content.text}</p>
                       </a>
                     ))}
                   </li>
@@ -109,17 +109,17 @@ const Menu = () => {
               </li>
             </ul>
           </div>
-          <div className="flex gap-[89.31px] items-center">
+          <div className="flex items-center gap-[89.31px]">
             {isViewportMinMd && (
-              <div className="flex gap-4 items-center text-white">
+              <div className="flex items-center gap-4 text-white">
                 <Button
                   text="Criar conta"
-                  className="hover:text-black hover:bg-white ease-out duration-300"
+                  className="duration-300 ease-out hover:bg-white hover:text-black"
                 />
                 <Button
                   onClick={toggle}
                   variant="secondary"
-                  className="py-[10px] px-[26.23px] gap-[6.31px]"
+                  className="gap-[6.31px] px-[26.23px] py-[10px]"
                 >
                   <FaRegUser size={18.92} />
                   <p>Logar</p>
@@ -127,24 +127,24 @@ const Menu = () => {
               </div>
             )}
             {!isViewportMinLg && (
-              <FaBars className="fill-white w-7 h-[18.67px]" />
+              <FaBars className="h-[18.67px] w-7 fill-white" />
             )}
           </div>
         </div>
       </header>
       <Modal isOpen={isOpen} toggle={toggle}>
-        <div className="flex flex-col justify-center items-center w-full">
-          <div className="flex items-center flex-col gap-10 mb-[41px]">
+        <div className="flex w-full flex-col items-center justify-center">
+          <div className="mb-[41px] flex flex-col items-center gap-10">
             <img
               src={logoBattleNet}
               alt="logo-battle-net"
-              className="w-[166.53px] h-5"
+              className="h-5 w-[166.53px]"
             />
             <form onSubmit={handleSubmit(console.log)}>
-              <div className="flex flex-col w-[426px] gap-4 mb-6">
+              <div className="mb-6 flex w-[426px] flex-col gap-4">
                 <input
                   autoComplete="off"
-                  className="outline-[#00AEFF] px-4 pt-3 pb-[13px] text-[15px] leading-[22.5px] font-medium rounded text-[#363842]"
+                  className="rounded px-4 pb-[13px] pt-3 text-[15px] font-medium leading-[22.5px] text-[#363842] outline-[#00AEFF]"
                   placeholder="Email ou Telefone"
                   type="email"
                   {...register("email", {
@@ -159,7 +159,7 @@ const Menu = () => {
                 )}
                 <input
                   autoComplete="off"
-                  className="outline-[#00AEFF] px-4 pt-3 pb-[13px] text-[15px] leading-[22.5px] font-medium rounded text-[#363842]"
+                  className="rounded px-4 pb-[13px] pt-3 text-[15px] font-medium leading-[22.5px] text-[#363842] outline-[#00AEFF]"
                   placeholder="Senha"
                   type="password"
                   {...register("password", { required: true })}
@@ -172,29 +172,29 @@ const Menu = () => {
                 type="submit"
                 text="Conectar-se"
                 variant="secondary"
-                className="w-full text-white flex items-center py-[14px] font-semibold text-base"
+                className="flex w-full items-center py-[14px] text-base font-semibold text-white"
               />
             </form>
           </div>
           <div className="flex flex-col items-center justify-center gap-[35px] text-white">
             <div className="flex flex-col items-center gap-4">
-              <p className="font-medium text-sm leading-[21px]">
+              <p className="text-sm font-medium leading-[21px]">
                 ou conecte-se com
               </p>
-              <ul className="flex gap-4 items-center">
-                <li className="bg-white rounded flex items-center justify-center w-12 h-12">
+              <ul className="flex items-center gap-4">
+                <li className="flex h-12 w-12 items-center justify-center rounded bg-white">
                   <FaGoogle size={20} className="fill-black" />
                 </li>
-                <li className="bg-white rounded flex items-center justify-center w-12 h-12">
+                <li className="flex h-12 w-12 items-center justify-center rounded bg-white">
                   <FaApple size={20} className="fill-black" />
                 </li>
-                <li className="bg-white rounded flex items-center justify-center w-12 h-12">
+                <li className="flex h-12 w-12 items-center justify-center rounded bg-white">
                   <FaFacebookSquare size={20} className="fill-black" />
                 </li>
               </ul>
             </div>
             <div className="flex flex-col items-center gap-4">
-              <span className="font-medium text-base">
+              <span className="text-base font-medium">
                 <a href="/" className="text-[#00AEFF] underline">
                   Crie uma conta
                 </a>{" "}
@@ -202,7 +202,7 @@ const Menu = () => {
               </span>
               <a
                 href="/"
-                className="text-[#00AEFF] font-medium text-base underline"
+                className="text-base font-medium text-[#00AEFF] underline"
               >
                 Não consegue logar?
               </a>
