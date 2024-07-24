@@ -13,24 +13,18 @@ const ExclusiveGames = () => {
   const { isViewportMinSm } = useViewportContext();
 
   return (
-    <main className="flex flex-col sm:gap-[85px] gap-[57px] h-fit items-center bg-[#020203]">
+    <main className="flex h-fit flex-col items-center gap-[57px] bg-[#020203] sm:gap-[85px]">
       <ExclusiveGamesHeader />
-      <div className="h-fit w-full  flex items-center justify-center">
-        <div
-          className="
-        2xl:grid xl:grid-cols-4 
-        xl:grid md:grid-cols-3 grid grid-cols-2 sm:gap-x-8 gap-x-4 sm:gap-y-12 gap-y-6 2xl:mb-[107.3px] xl:mb-[119px] md:mb-[87.67px] mb-[69.46px] w-fit"
-        >
-          {games?.map((game) => (
-            <CardGame key={game.name} {...game} />
-          ))}
-          <div className="flex flex-col 2xl:gap-[36.55px] xl:gap-[34px] gap-[15.04px] items-center justify-center bg-black 2xl:w-[301px] 2xl:h-[412.8px] xl:w-[280px] xl:h-[384px] md:w-[201.72px] md:h-[276.64px] w-[156px] h-[213.94px] border border-[#212428] rounded">
+      <div className="flex h-fit w-full items-center justify-center">
+        <div className="mb-[69.46px] grid w-fit grid-cols-2 gap-x-4 gap-y-6 sm:gap-x-8 sm:gap-y-12 md:mb-[87.67px] md:grid-cols-3 xl:mb-[119px] xl:grid xl:grid-cols-4 2xl:mb-[107.3px] 2xl:grid">
+          {games?.map((game) => <CardGame key={game.name} {...game} />)}
+          <div className="flex h-[213.94px] w-[156px] flex-col items-center justify-center gap-[15.04px] rounded border border-[#212428] bg-black md:h-[276.64px] md:w-[201.72px] xl:h-[384px] xl:w-[280px] xl:gap-[34px] 2xl:h-[412.8px] 2xl:w-[301px] 2xl:gap-[36.55px]">
             <img
               src={logoBlizzard}
               alt="blizzard-logo"
-              className="2xl:w-[93.28px] 2xl:h-[43px] xl:w-[86.77] xl:h-10 w-[69.23px] h-[31.91px]"
+              className="h-[31.91px] w-[69.23px] xl:h-10 xl:w-[86.77] 2xl:h-[43px] 2xl:w-[93.28px]"
             />
-            <button className="flex items-center text-white font-semibold 2xl:text-[17.2px] 2xl:leading-[25.8px] xl:text-base text-sm  gap-[13.97px]">
+            <button className="flex items-center gap-[13.97px] text-sm font-semibold text-white xl:text-base 2xl:text-[17.2px] 2xl:leading-[25.8px]">
               {isViewportMinSm && (
                 <img src={iconFourSquareGray} alt="icon-four-square" />
               )}
