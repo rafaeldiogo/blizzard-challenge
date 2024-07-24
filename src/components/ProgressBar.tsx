@@ -4,7 +4,7 @@ type ProgressBarProps = {
 };
 
 const ProgressBar = ({ value, max = 100 }: ProgressBarProps) => {
-  return <progress className="w-full h-[3px]" value={value} max={max} />;
+  return <progress className="h-[3px] w-full" value={value} max={max} />;
 };
 
 export default ProgressBar;

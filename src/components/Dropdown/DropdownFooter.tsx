@@ -9,7 +9,7 @@ type DropdownFooterProps = {
 const DropdownFooter = ({ name }: DropdownFooterProps) => {
   return (
     <nav>
-      <ul className="flex items-center justify-center text-white gap-16 h-[70px] bg-[#15171B]">
+      <ul className="flex h-[70px] items-center justify-center gap-16 bg-[#15171B] text-white">
         {name === "Jogos" && (
           <>
             {mapGamesFooter.map((content) => (

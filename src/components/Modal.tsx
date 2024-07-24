@@ -12,14 +12,14 @@ const Modal = ({ children, isOpen, toggle }: ModalProps) => {
   return (
     <>
       {isOpen && (
-        <div className="z-10 absolute top-0 flex items-center justify-center w-full h-full bg-[rgba(0,0,0,0.7)]">
-          <div className="flex justify-between p-6 bg-[#020203] bg-[url('./assets/modal/images/bg-login-form.png')] w-[696px] h-[600px]">
+        <div className="absolute top-0 z-10 flex h-full w-full items-center justify-center bg-[rgba(0,0,0,0.7)]">
+          <div className="flex h-[600px] w-[696px] justify-between bg-[#020203] bg-[url('./assets/modal/images/bg-login-form.png')] p-6">
             {children}
             <button className="flex items-start" onClick={toggle}>
               <img
                 src={iconCloseModal}
                 alt="close-modal-icon"
-                className="w-8 h-8"
+                className="h-8 w-8"
               />
             </button>
           </div>

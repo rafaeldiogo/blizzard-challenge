@@ -10,14 +10,14 @@ const ExclusiveGamesHeader = () => {
   const { isViewportMinSm, isViewportMinLg } = useViewportContext();
 
   return (
-    <div className="flex w-full 2xl:gap-[171px] gap-[161px] 2xl:max-w-[1300px] xl:max-w-[1196px] max-w-[669px] justify-between items-end 2xl:pt-[85px] xl:pt-[78px] md:pt-[88px] pt-[57px]">
+    <div className="flex w-full max-w-[669px] items-end justify-between gap-[161px] pt-[57px] md:pt-[88px] xl:max-w-[1196px] xl:pt-[78px] 2xl:max-w-[1300px] 2xl:gap-[171px] 2xl:pt-[85px]">
       {isViewportMinLg && (
-        <p className="uppercase text-[#8F9199] font-semibold text-[15px] leading-[22.5px] mb-[3%]">
+        <p className="mb-[3%] text-[15px] font-semibold uppercase leading-[22.5px] text-[#8F9199]">
           Games
         </p>
       )}
-      <div className="flex justify-between w-full items-end sm:mx-0 mx-6">
-        <p className="font-bold sm:text-[32px] text-[28px] leading-[30.86px] sm:leading-[35.26px] text-white w-[175px]">
+      <div className="mx-6 flex w-full items-end justify-between sm:mx-0">
+        <p className="w-[175px] text-[28px] font-bold leading-[30.86px] text-white sm:text-[32px] sm:leading-[35.26px]">
           Jogos exclusivos
         </p>
         {isViewportMinSm && (
@@ -26,33 +26,33 @@ const ExclusiveGamesHeader = () => {
               <img
                 src={iconBattleNet}
                 alt="icon-battle-net"
-                className="w-[21.98px] h-[22px]"
+                className="h-[22px] w-[21.98px]"
               />
             </li>
             <li>
               <img
                 src={iconNintendoSwitch}
                 alt="icon-nintendo-switch"
-                className="w-[21.98px] h-[22px]"
+                className="h-[22px] w-[21.98px]"
               />
             </li>
             <li>
               <img
                 src={iconXbox}
                 alt="icon-xbox"
-                className="w-[21.98px] h-[22px]"
+                className="h-[22px] w-[21.98px]"
               />
             </li>
             <li>
               <img
                 src={iconPlayStation}
                 alt="icon-play-station"
-                className="w-[21.98px] h-[22px]"
+                className="h-[22px] w-[21.98px]"
               />
             </li>
           </ul>
         )}
-        <button className="text-[#00AEFF] font-semibold sm:text-base text-sm leading-[21px] border-none gap-[10px] flex items-center">
+        <button className="flex items-center gap-[10px] border-none text-sm font-semibold leading-[21px] text-[#00AEFF] sm:text-base">
           <img src={iconFourSquareBlue} alt="icon-four-square" />
           <p>Ver todos jogos</p>
         </button>
