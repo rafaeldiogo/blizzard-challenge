@@ -49,7 +49,7 @@ const Menu = () => {
       >
         <div className="ml-6 mr-7 flex max-w-[1312.69px] flex-1 items-center justify-between md:ml-[45px] md:mr-[49px]">
           <div className="flex gap-[112.3px]">
-            <a href="/">
+            <a href="/blizzard-challenge">
               <img
                 src={logoBlizzard}
                 alt="blizzard-logo"
@@ -64,7 +64,7 @@ const Menu = () => {
                     {mapGames.map((content) => (
                       <a
                         key={content.text}
-                        href="/"
+                        href="/blizzard-challenge"
                         className="group flex h-44 w-44 flex-col items-center justify-center gap-2 duration-300 ease-in-out hover:bg-[#0B0D12]"
                       >
                         <img
@@ -84,7 +84,7 @@ const Menu = () => {
                     {mapSports.map((content) => (
                       <a
                         key={content.text}
-                        href="/"
+                        href="/blizzard-challenge"
                         className="group flex h-[237px] w-[174px] flex-col items-center gap-2 duration-300 ease-in-out hover:bg-[#0B0D12]"
                       >
                         <img
@@ -99,13 +99,13 @@ const Menu = () => {
                 </Dropdown>
               </li>
               <li className={`${hover}`}>
-                <a href="/">Loja</a>
+                <a href="/blizzard-challenge">Loja</a>
               </li>
               <li className={`${hover}`}>
-                <a href="/">Notícias</a>
+                <a href="/blizzard-challenge">Notícias</a>
               </li>
               <li className={`${hover}`}>
-                <a href="/">Suporte</a>
+                <a href="/blizzard-challenge">Suporte</a>
               </li>
             </ul>
           </div>
@@ -195,13 +195,16 @@ const Menu = () => {
             </div>
             <div className="flex flex-col items-center gap-4">
               <span className="text-base font-medium">
-                <a href="/" className="text-[#00AEFF] underline">
+                <a
+                  href="/blizzard-challenge"
+                  className="text-[#00AEFF] underline"
+                >
                   Crie uma conta
                 </a>{" "}
                 Battle.net de graça
               </span>
               <a
-                href="/"
+                href="/blizzard-challenge"
                 className="text-base font-medium text-[#00AEFF] underline"
               >
                 Não consegue logar?

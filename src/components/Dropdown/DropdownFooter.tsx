@@ -14,7 +14,7 @@ const DropdownFooter = ({ name }: DropdownFooterProps) => {
           <>
             {mapGamesFooter.map((content) => (
               <li key={content.text}>
-                <a href="/" className="flex gap-[10px]">
+                <a href="/blizzard-challenge" className="flex gap-[10px]">
                   <img src={content.icon} alt={content.alt} />
                   <p>{content.text}</p>
                 </a>
@@ -24,7 +24,7 @@ const DropdownFooter = ({ name }: DropdownFooterProps) => {
         )}
         {name === "Esportes" && (
           <li>
-            <a href="/" className="flex gap-[10px]">
+            <a href="/blizzard-challenge" className="flex gap-[10px]">
               <img src={iconTournament} alt="icon-tournament" />
               <p>Torneios da comunidade</p>
             </a>
